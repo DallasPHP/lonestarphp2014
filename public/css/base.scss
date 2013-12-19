@@ -1,0 +1,9 @@
+body {
+    font: 1em/1.2 "Lucida Grande", arial, verdana;
+}
+a {
+    color: $baseColor;
+}
+a:hover {
+    color: lighten($baseColor, 10%);
+}

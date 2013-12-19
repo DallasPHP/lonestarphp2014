@@ -25,11 +25,11 @@
  * @tags ^button
  * @extends btn
  */
-.btn-xsmall { font-size: 0.8em; }
-.btn-small { font-size: 1em; }
-.btn-medium { font-size: 1.25em; }
-.btn-large { font-size: 1.5em; }
-.btn-xlarge { font-size: 1.75em; }
+.btn-xsmall { font-size: 1rem; }
+.btn-small { font-size: 1.2rem; }
+.btn-medium { font-size: 1.5rem; }
+.btn-large { font-size: 2rem; }
+.btn-xlarge { font-size: 2.5rem; }
 .btn--full { display: block; }
 
 /**
@@ -56,27 +56,12 @@
 .btn-primary:visited {
     color: #fff;
 }
-
-/**
- * Basic flat button
- * @tags ^button
- * @extends btn
- */
-.btn-basic {
-    border-radius: 0.25em;
-    font-family: $fontButtonFamily;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-.btn-basic:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-.btn-basic:visited { color: #fff; }
 .btn--dark {
-    background: $baseColor;
+    background: darken($baseColor, 25%);
     color: #fff;
+    &:hover {
+        background: darken($baseColor, 10%);
+    }
 }
 .btn--light {
     background: #ebf0e7;

@@ -23,25 +23,56 @@
         </ul>
     </nav>
     <header class="l-header">
-        <img src="images/lonestarphp-logo.png">
-        <h1 class="h-header">Join us <span class="h-header-highlight">April 25th - 26th, 2014</span> for this two day event and hear the best speakers the <span class="h-header-highlight">PHP Community</span> has to offer.</h1>
-        <a href="http://cfp.lonestarphp.com" class="btn btn-primary btn-large"><i class="fa fa-file-text-o"></i> Call For Papers Now Open</a>
+        <div class="container">
+            <img src="images/lonestarphp-logo.png">
+            <h1 class="h-header">Join us <span class="h-header-highlight">April 25th - 26th, 2014</span> for this two day event and hear the best speakers the <span class="h-header-highlight">PHP Community</span> has to offer.</h1>
+            <a href="http://cfp.lonestarphp.com" class="btn btn-primary btn-large"><i class="fa fa-file-text-o"></i> Call For Papers Now Open</a>
+        </div>
     </header>
-    <section class="l-cta">
-        Hello World
+    <section class="l-cta l-section">
+        <div class="container">
+            <p>Early Bird Tickets are available until February 4th! Grab a ticket while they're still available<br><a href="#" class="btn btn-primary btn--medium btn--dark"><i class="fa fa-ticket"></i> Get Early Bird Ticket</a></p>
+        </div>
     </section>
-    <section class="l-description">
-        CONF DESCRIPTION
+    <section class="l-description l-section">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__item one-third">
+                    First Topic to showcase for LSP
+                </div>
+                <div class="grid__item one-third">
+                    Second Topic to showcase for LSP
+                </div>
+                <div class="grid__item one-third">
+                    Third Topic to showcase for LSP
+                </div>
+            </div>
+        </div>
     </section>
-    <section class="l-speakers">
-        SPEAKERS
+    <section class="l-speakers l-section">
+        <div class="container">
+            <h2 class="h-section">Speakers</h2>
+            <p>Speakers will be announced on January 20th, 2014. In the mean time, <a href="http://cfp.lonestarphp.com">submit a paper</a> to become a 2014 Lone Star PHP speaker!</p>
+        </div>
     </section>
     <section class="l-map" id="map"></section>
-    <section class="l-sponsors">
-        SPONSORS
+    <section class="l-sponsors l-section">
+        <div class="container">
+            <h2 class="h-section">Sponsors</h2>
+            <p>In 2014, Lone Star PHP looks to continue it's great success. If you would like to be apart of making 2014 the best event yet, review the <a href="#">sponsor prospectus</a>.</p>
+        </div>
     </section>
-    <footer class="l-footer">
-        FOOTER
+    <footer class="l-footer l-section">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__item one-half">
+                    Footer Content Block
+                </div>
+                <div class="grid__item one-half">
+                    Footer Content Block
+                </div>
+            </div>
+        </div>
     </footer>
     <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript">
@@ -50,7 +81,7 @@
             var latLng = new google.maps.LatLng(32.961772, -96.828379);
 
             var mapOptions = {
-                zoom: 15,
+                zoom: 16,
                 center: latLng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 panControl: true,
@@ -69,9 +100,7 @@
                 position: latLng,
                 map: map,
                 title: "Addison Convention Center",
-
-
-
+                icon: 'images/map/logo.png',
                 animation: google.maps.Animation.DROP
             });
 

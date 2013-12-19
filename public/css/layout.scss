@@ -1,15 +1,21 @@
 .l-header {
-    @include media-query(portable) { background-size: auto 100% }
+    @media screen and (min-width: 1165px) { background-size: 100% auto; }
     background: #fff url('../images/dallas-skyline.jpg') top center no-repeat;
-    background-size: 100% auto;
+    background-size: auto 100%;
     padding: 100px 0 20px;
     min-height: 600px;
     text-align: center;
 }
+.l-section {
+    padding: 1rem 0;
+}
 .l-cta {
     background: $baseColor;
     color: #fff;
-    padding: 1rem;
+    font-size: 2rem;
+    font-family: 'Open Sans', 'lucida grande', arial;
+    font-weight: 300;
+    text-align: center;
 }
 .l-speakers {
     background: $secondaryColor;
@@ -25,7 +31,7 @@
 }
 .l-footer {
     background: transparent url('../images/texture-jeans-dark.png') repeat;
-    padding: 1rem;
+    color: #fff;
 }
 /**
  * Ribbon

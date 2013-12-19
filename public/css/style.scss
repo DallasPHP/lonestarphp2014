@@ -20,6 +20,7 @@
 /**
  * App Specific Styles
  */
+@import "base.scss";
 @import "layout.scss";
 @import "buttons.scss";
 
@@ -31,6 +32,25 @@
 }
 .h-header-highlight {
     color: $secondaryColor;
+}
+.h-section {
+    color: $baseColor;
+    font-size: 3.5rem;
+    font-family: $fontHeadlineFamily;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+    @include media-query(desk) {
+        width: $desk-start - 30px;
+    }
+    @include media-query(desk-wide) {
+        width: $desk-wide-start - 30px;
+    }
 }
 
 .responsive-image { max-width: 100%; }
