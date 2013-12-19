@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    STYLE.CSS
+\*------------------------------------*/
+/**
+ *
+ * sass --watch style.scss:style.min.css --style compressed
+ *
+ * Here we pull in some variables, include the inuit.css framework, then add our
+ * project-specific components afterwards.
+ */
+
+
+/**
+ * Setup
+ */
+@import "vars";
+@import "inuit.css/inuit";
+
+/**
+ * App Specific Styles
+ */
+@import "layout.scss";
+@import "buttons.scss";
+
+.h-header {
+    color: #fff;
+    font-family: $fontIntroFamily;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+}
+.h-header-highlight {
+    color: $secondaryColor;
+}
+
+.responsive-image { max-width: 100%; }
+.grid { white-space: nowrap; }
+.grid__item { white-space: normal; }
