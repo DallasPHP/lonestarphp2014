@@ -33,6 +33,15 @@
     background: transparent url('../images/texture-jeans-dark.png') repeat;
     color: #fff;
 }
+.nav--light > li > a {
+    background: #ecebe7;
+    color: #63625a;
+    text-decoration: none;
+    margin: 1px 0;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    &:hover { background: #d5d3cb; }
+}
 /**
  * Ribbon
  */

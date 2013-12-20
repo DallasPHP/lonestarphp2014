@@ -31,7 +31,7 @@
     text-transform: uppercase;
 }
 .h-header-highlight {
-    color: $secondaryColor;
+    color: darken($secondaryColor, 15%);
 }
 .h-section {
     color: $baseColor;
@@ -40,6 +40,17 @@
     font-weight: 300;
     text-align: center;
     text-transform: uppercase;
+}
+.h-footer {
+    margin: 0 0 0.5em;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.z-structural { z-index: 900; }
+.copyright {
+    font-size: 0.8em;
+    text-align: center;
 }
 
 .container {
