@@ -28,6 +28,7 @@
     border-width: 3px 0;
     height: 400px;
     width: 100%;
+    @include media-query(palm) { height: 200px; }
 }
 .l-footer {
     background: transparent url('../images/texture-jeans-dark.png') repeat;
@@ -57,6 +58,10 @@
 }
 .nav-main li {
     padding: 0.6rem 0.8rem;
+    @include media-query(palm) {
+        display: block;
+        padding: 0 0.5rem;
+    }
 }
 .nav-main .nav a {
     color: $baseColor;
@@ -71,8 +76,44 @@
         background: $baseColor;
         color: #fff;
     }
+    @include media-query(palm) {
+        display: block;
+    }
+}
+.nav-toggle {
+    display: inline-block;
+    @include media-query(lap-and-up) { display: none; }
+}
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin: 0 0.5rem;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.collapse {
+    display: none;
+    @include media-query(lap-and-up) { display: block; }
 }
 
-.btn {
+.icon-bar {
+    background: #CCC;
+    margin: 2px 0;
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
