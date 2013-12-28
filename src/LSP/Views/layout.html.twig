@@ -2,22 +2,92 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>{% block title %}Orlex Standard Distribution Hello World{% endblock %}</title>
-    {% block head %}{% endblock %}
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+
+    <title>{% block title %}Lone Star PHP Conference | April 25th - 26th, 2014 | Dallas, Texas{% endblock %}</title>
+
+    {% block head %}
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,600,700|Open+Sans+Condensed:700,300|Sanchez' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    {% endblock %}
 </head>
 <body>
-{% for flash_type in ['error', 'warning', 'success'] %}
-    {% if app.session.getFlashBag.has(flash_type) %}
-        {% for flash in app.session.getFlashBag.get(flash_type) %}
-            <div class="alert alert-{{ flash_type }}">
-                {{ flash | raw }}
-            </div>
-        {% endfor %}
-    {% endif %}
-{% endfor %}
+    <nav class="nav-main">
+        <div class="nav-toggle">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <ul class="nav nav--block collapse" id="primary-navigation">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Speakers</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="#">Sponsors</a></li>
+            <li><a href="#">Venue</a></li>
+            <li><a href="mailto:info@lonestarphp.com">Contact</a></li>
+            <li><a href="https://lonestarphp.ticketbud.com/lone-star-php-2014" class="active" target="_blank" rel="external">Register Now</a></li>
+        </ul>
+    </nav>
+    <header class="l-header">
+        <div class="container">
+            <img src="images/lonestarphp-logo.png">
+            <h1 class="h-header">Join us <span class="h-header-highlight">April 25th - 26th, 2014</span> for this two day event and hear the best speakers the <span class="h-header-highlight">PHP Community</span> has to offer.</h1>
+            <a href="http://cfp.lonestarphp.com" class="btn btn-primary btn-large"><i class="fa fa-file-text-o"></i> Call For Papers Now Open</a>
+        </div>
+    </header>
+    {% block body %}{% endblock %}
+    <footer class="l-footer l-section">
+        <div class="container grid">
+                <div class="grid__item one-half palm-one-whole">
+                    <h6 class="h-footer">Social Media</h6>
+                    <ul class="nav nav--stacked nav--light">
+                        <li><a href="http://twitter.com/lonestarphp"><i class="fa fa-twitter"></i> @lonestarphp</a></li>
+                        <li><a href="https://www.facebook.com/lonestarconference"><i class="fa fa-facebook-square"></i> lonestarconference</a></li>
+                    </ul>
+                </div><!--
 
-{% block body %}{% endblock %}
+             --><div class="grid__item one-half palm-one-whole">
+                    <h6 class="h-footer">Additional Information</h6>
+                    <!-- <ul class="nav nav--stacked nav--light">
+                        <li><a href="refund-policy.html">Refund Policy</a></li>
+                        <li><a href="code-conduct.html">Code of Conduct</a></li>
+                        <li><a href="site-credits.html">Site Credits</a></li>
+                    </ul> -->
+                </div><!--
 
-{% block javascript %}{% endblock %}
+             --><div class="grid__item one-whole copyright">
+                    Copyright &copy; 2011–2013 Lone Star PHP Conference &ndash; All Rights Reserved
+                </div>
+        </div>
+    </footer>
+
+
+    {% block javascript %}
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="/js/map.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-246789-4']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    {% endblock %}
+
+</body>
+</html>
+
+
+
+    
 </body>
 </html>

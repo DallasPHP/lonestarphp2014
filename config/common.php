@@ -7,7 +7,7 @@ date_default_timezone_set('America/Chicago');
 $app = new Silex\Application();
 
 //Default environment and debugging
-$app['environment'] = strtolower(isset($_SERVER['ENVIRONMENT']) ? $_SERVER['ENVIRONMENT'] : isset($_ENV['ENVIRONMENT']) ? $_ENV['environment'] : 'prod');
+$app['environment'] = strtolower(getenv('ENVIRONMENT') ? getenv('ENVIRONMENT') : 'prod');
 $app['debug']       = $app['environment'] == 'dev' ? true : false;
 
 ////

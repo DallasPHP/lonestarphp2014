@@ -1,18 +1,27 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Welcome to LoneStarPHP | {{ parent() }}{% endblock %}
-
 {% block body %}
-    <h1>Welcome to Orlex!</h1>
-
-    {% if app.session.has('username') %}
-        <h2>You are logged in as {{ app.session.get('username') }}</h2>
-        <p>Please <a href="{{ path("logout") }}">Logout</a></p>
-    {% else %}
-        <p>Please Login:</p>
-        <form method="POST" action="{{ path("login") }}">
-            {{ form_widget(form) }}
-            <button type="submit">Save</button>
-        </form>
-    {% endif %}
+    <section class="l-cta l-section">
+        <div class="container">
+            <p>Early Bird Tickets are available until February 4th! Grab a ticket while they're still available<br><a href="https://lonestarphp.ticketbud.com/lone-star-php-2014" target="_blank" rel="external" class="btn btn-primary btn--medium btn--dark"><i class="fa fa-ticket"></i> Get Early Bird Ticket</a></p>
+        </div>
+    </section>
+    <section class="l-description l-section">
+        <div class="container">
+            <p>Welcome back to Lone Star PHP for another great year! We're in our <strong>fourth year</strong> and we're making things better all the time. This year's event will provide all of the great PHP speakers and content you've come to expect from Lone Star PHP. There'll be plenty of time to spend with the local PHP community too through after-parties and other events.</p>
+        </div>
+    </section>
+    <section class="l-speakers l-section">
+        <div class="container">
+            <h2 class="h-section">Speakers</h2>
+            <p>Speakers will be announced on January 20th, 2014. In the mean time, <a href="http://cfp.lonestarphp.com">submit a paper</a> to become a 2014 Lone Star PHP speaker!</p>
+        </div>
+    </section>
+    <section class="l-map" id="map"></section>
+    <section class="l-sponsors l-section">
+        <div class="container">
+            <h2 class="h-section">Sponsors</h2>
+            <p>In 2014, Lone Star PHP looks to continue its great success. If you would like to be apart of making 2014 the best event yet, review the <a href="/docs/LoneStarPHP-Prospectus-2014.pdf">sponsor prospectus</a>.</p>
+        </div>
+    </section>
 {% endblock %}

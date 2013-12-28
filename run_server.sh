@@ -7,7 +7,9 @@ echo " | |    / _ \| '_ \ / _ \\\\___ \| __/ _\` | '__|  ___/|  __  |  ___/"
 echo " | |___| (_) | | | |  __/____) | || (_| | |  | |    | |  | | |       "
 echo " |______\___/|_| |_|\___|_____/ \__\__,_|_|  |_|    |_|  |_|_|       "
 echo ""
-echo "Running PHP internal server..."
+echo "Running PHP internal server... When this is finished, you may view LoneStarPHP at:"
+echo "    http://localhost:4000/ "
+echo ""
 echo ""
 
 

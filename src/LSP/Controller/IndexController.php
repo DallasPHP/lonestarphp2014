@@ -20,43 +20,13 @@ class IndexController {
     use UrlGeneratorTrait;
 
     /**
-     * @Route("/",methods={"GET","POST"},name="index")
+     * @Route("/",methods={"GET"},name="index")
      */
     public function indexAction() {
-        $form = $this->createBuilder(new Form\LoginForm())->getForm();
+        // $form = $this->createBuilder(new Form\LoginForm())->getForm();
 
         return $this->render("index.html.twig", [
-            'form' => $form->createView(),
+            // 'form' => $form->createView(),
         ]);
-    }
-
-    /**
-     * @Route("/login",methods={"POST"},name="login")
-     */
-    public function loginAction() {
-        /** @var $request \Symfony\Component\HttpFoundation\Request */
-        $request = $this->get('request');
-
-        $form = $this->createBuilder(new Form\LoginForm())->getForm();
-
-        if ('POST' == $request->getMethod()) {
-            $form->submit($request);
-
-            if ($form->isValid()) {
-                $data = $form->getData();
-
-                $this->session()->set("username", $data['username']);
-            }
-        }
-
-        return new RedirectResponse($this->path("index"));
-    }
-
-    /**
-     * @Route("/logout",methods={"GET"},name="logout")
-     */
-    public function logoutAction() {
-        $this->session()->clear();
-        return new RedirectResponse($this->path("index"));
     }
 }
