@@ -32,6 +32,7 @@
             <li><a href="https://lonestarphp.ticketbud.com/lone-star-php-2014" class="active" target="_blank" rel="external">Register Now</a></li>
         </ul>
     </nav>
+    {% block header %}
     <header class="l-header">
         <div class="container">
             <img src="images/lonestarphp-logo.png">
@@ -39,7 +40,9 @@
             <a href="http://cfp.lonestarphp.com" class="btn btn-primary btn-large"><i class="fa fa-file-text-o"></i> Call For Papers Now Open</a>
         </div>
     </header>
+    {% endblock %}
     {% block body %}{% endblock %}
+    {% block footer %}
     <footer class="l-footer l-section">
         <div class="container grid">
                 <div class="grid__item one-half palm-one-whole">
@@ -48,24 +51,22 @@
                         <li><a href="http://twitter.com/lonestarphp"><i class="fa fa-twitter"></i> @lonestarphp</a></li>
                         <li><a href="https://www.facebook.com/lonestarconference"><i class="fa fa-facebook-square"></i> lonestarconference</a></li>
                     </ul>
-                </div><!--
-
-             --><div class="grid__item one-half palm-one-whole">
+                </div>
+                <div class="grid__item one-half palm-one-whole">
                     <h6 class="h-footer">Additional Information</h6>
-                    <!-- <ul class="nav nav--stacked nav--light">
-                        <li><a href="refund-policy.html">Refund Policy</a></li>
-                        <li><a href="code-conduct.html">Code of Conduct</a></li>
-                        <li><a href="site-credits.html">Site Credits</a></li>
-                    </ul> -->
-                </div><!--
-
-             --><div class="grid__item one-whole copyright">
+                    <ul class="nav nav--stacked nav--light">
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="{{ path("coc") }}">Code of Conduct</a></li>
+                        <li><a href="#">Site Credits</a></li>
+                    </ul> 
+                </div>
+                <div class="grid__item one-whole copyright">
                     Copyright &copy; 2011–2013 Lone Star PHP Conference &ndash; All Rights Reserved
                 </div>
         </div>
     </footer>
-
-
+    {% endblock %}
+    
     {% block javascript %}
     <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="/js/map.js"></script>
@@ -82,7 +83,6 @@
       })();
     </script>
     {% endblock %}
-
 </body>
 </html>
 

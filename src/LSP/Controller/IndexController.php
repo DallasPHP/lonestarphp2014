@@ -29,4 +29,11 @@ class IndexController {
             // 'form' => $form->createView(),
         ]);
     }
+    
+    /**
+     * @Route("/code-of-conduct",methods={"GET"},name="coc")
+     */
+    public function codeOfConduct() {
+        return $this->render("coc.html.twig", []);
+    }
 }
