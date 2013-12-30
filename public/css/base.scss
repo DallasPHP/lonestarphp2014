@@ -1,5 +1,7 @@
 body {
-    font: 1.2em/1.4 "Lucida Grande", arial, verdana;
+    background: $secondaryColor;
+    font: 1em/1.4 "Open Sans", "Lucida Grande", arial, verdana;
+    font-weight: 400;
 }
 a {
     color: $baseColor;

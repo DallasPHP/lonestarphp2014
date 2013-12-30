@@ -20,9 +20,10 @@
 /**
  * App Specific Styles
  */
-@import "base.scss";
-@import "layout.scss";
-@import "buttons.scss";
+@import "base";
+@import "layout";
+@import "buttons";
+@import "modules/sponsor";
 
 .h-header {
     color: #fff;
@@ -48,6 +49,11 @@
 }
 
 .z-structural { z-index: 900; }
+.divider {
+    border-top: 1px solid #ccc;
+    box-shadow: 0 -1px 0 #fff;
+    margin: 1.5rem 0;
+}
 .copyright {
     font-size: 0.8em;
     text-align: center;

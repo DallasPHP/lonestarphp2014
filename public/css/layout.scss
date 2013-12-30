@@ -1,10 +1,15 @@
 .l-header {
-    @media screen and (min-width: 1165px) { background-size: 100% auto; }
+    @include media-query(palm) { background-size: 100% 100%; }
     background: #fff url('../images/dallas-skyline.jpg') top center no-repeat;
-    background-size: auto 100%;
+    background-size: 100% auto;
     padding: 100px 0 20px;
-    min-height: 600px;
+    min-height: 400px;
     text-align: center;
+}
+.l-header--large {
+    @media screen and (min-width: 1165px) { background-size: 100% auto; }
+    background-size: auto 100%;
+    min-height: 600px;
 }
 .l-section {
     padding: 1rem 0;
@@ -17,12 +22,10 @@
     font-weight: 300;
     text-align: center;
 }
-.l-speakers {
-    background: $secondaryColor;
+.l-description {
+    background: #fff;
 }
-.l-sponsors {
-    background: $secondaryColor;
-}
+
 .l-map {
     border: 3px solid #333;
     border-width: 3px 0;
@@ -40,7 +43,7 @@
     text-decoration: none;
     margin: 1px 0;
     padding: 0.5em 1em;
-    font-size: 1em;
+    font-size: 0.8rem;
     &:hover { background: #d5d3cb; }
 }
 /**

@@ -8,12 +8,12 @@
 
     {% block head %}
     <link rel="stylesheet" href="/css/style.min.css">
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,600,700|Open+Sans+Condensed:700,300|Sanchez' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Open+Sans+Condensed:700,300|Sanchez' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     {% endblock %}
 </head>
 <body>
-    <nav class="nav-main">
+    <nav class="nav-main z-structural">
         <div class="nav-toggle">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-navigation">
                 <span class="sr-only">Toggle navigation</span>
@@ -26,22 +26,31 @@
             <li><a href="/">Home</a></li>
             <li><a href="#">Speakers</a></li>
             <li><a href="#">Schedule</a></li>
-            <li><a href="#">Sponsors</a></li>
-            <li><a href="#">Venue</a></li>
+            <li><a href="/sponsors">Sponsors</a></li>
+            <li><a href="/venue">Venue</a></li>
             <li><a href="mailto:info@lonestarphp.com">Contact</a></li>
             <li><a href="https://lonestarphp.ticketbud.com/lone-star-php-2014" class="active" target="_blank" rel="external">Register Now</a></li>
         </ul>
     </nav>
-    {% block header %}
-    <header class="l-header">
+    <header class="l-header{% if current_page == "index" %} l-header--large{% endif %}">
         <div class="container">
             <img src="images/lonestarphp-logo.png">
-            <h1 class="h-header">Join us <span class="h-header-highlight">April 25th - 26th, 2014</span> for this two day event and hear the best speakers the <span class="h-header-highlight">PHP Community</span> has to offer.</h1>
-            <a href="http://cfp.lonestarphp.com" class="btn btn-primary btn-large"><i class="fa fa-file-text-o"></i> Call For Papers Now Open</a>
+            {% block header %}
+                <h1 class="h-header">Join us <span class="h-header-highlight">April 25th - 26th, 2014</span> for this two day event and hear the best speakers the <span class="h-header-highlight">PHP Community</span> has to offer.</h1>
+                <a href="http://cfp.lonestarphp.com" class="btn btn-primary btn-large"><i class="fa fa-file-text-o"></i> Call For Papers Now Open</a>
+            {% endblock %}
         </div>
     </header>
-    {% endblock %}
     {% block body %}{% endblock %}
+    {% block sponsors %}
+    <section class="l-section">
+        <div class="container grid">
+            <h2 class="h-section">Sponsors</h2>
+            {% include "_sponsors.html.twig" %}
+            <p>In 2014, Lone Star PHP looks to continue its great success. If you would like to be apart of making 2014 the best event yet, review the <a href="/docs/LoneStarPHP-Prospectus-2014.pdf">sponsor prospectus</a>.</p>
+        </div>
+    </section>
+    {% endblock %}
     {% block footer %}
     <footer class="l-footer l-section">
         <div class="container grid">
@@ -51,27 +60,27 @@
                         <li><a href="http://twitter.com/lonestarphp"><i class="fa fa-twitter"></i> @lonestarphp</a></li>
                         <li><a href="https://www.facebook.com/lonestarconference"><i class="fa fa-facebook-square"></i> lonestarconference</a></li>
                     </ul>
-                </div>
-                <div class="grid__item one-half palm-one-whole">
+                </div><!--
+
+             --><div class="grid__item one-half palm-one-whole">
                     <h6 class="h-footer">Additional Information</h6>
                     <ul class="nav nav--stacked nav--light">
-                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="{{ path("refund") }}">Refund Policy</a></li>
                         <li><a href="{{ path("coc") }}">Code of Conduct</a></li>
-                        <li><a href="#">Site Credits</a></li>
-                    </ul> 
-                </div>
-                <div class="grid__item one-whole copyright">
+                        <li><a href="{{ path("credits") }}">Site Credits</a></li>
+                    </ul>
+                </div><!--
+
+             --><div class="grid__item one-whole copyright">
                     Copyright &copy; 2011–2013 Lone Star PHP Conference &ndash; All Rights Reserved
                 </div>
         </div>
     </footer>
     {% endblock %}
-    
-    {% block javascript %}
-    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript" src="/js/map.js"></script>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="/js/vendor/bootstrap.min.js"></script>
+    {% block javascript %}{% endblock %}
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-246789-4']);
@@ -82,12 +91,5 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-    {% endblock %}
-</body>
-</html>
-
-
-
-    
 </body>
 </html>

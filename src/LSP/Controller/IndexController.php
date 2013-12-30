@@ -29,11 +29,48 @@ class IndexController {
             // 'form' => $form->createView(),
         ]);
     }
-    
+
     /**
      * @Route("/code-of-conduct",methods={"GET"},name="coc")
      */
     public function codeOfConduct() {
         return $this->render("coc.html.twig", []);
+    }
+
+    /**
+     * @Route("/sponsors",methods={"GET"},name="sponsors")
+     */
+    public function sponsorsAction() {
+        return $this->render("sponsors.html.twig", []);
+    }
+
+    /**
+     * @Route("/venue",methods={"GET"},name="venue")
+     */
+    public function venueAction()
+    {
+        return $this->render("venue.html.twig", []);
+    }
+
+    /**
+     * @Route("/contact",methods={"GET"},name="contact")
+     */
+    public function contactAction()
+    {
+        return $this->render("contact.html.twig", []);
+    }
+
+    /**
+     * @Route("/credits",methods={"GET"},name="credits")
+     */
+    public function creditsAction() {
+        return $this->render("credits.html.twig", []);
+    }
+
+    /**
+     * @Route("/refund",methods={"GET"},name="refund")
+     */
+    public function refundAction() {
+        return $this->render("refund.html.twig", []);
     }
 }

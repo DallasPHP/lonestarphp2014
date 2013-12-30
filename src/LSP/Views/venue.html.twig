@@ -1,0 +1,54 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Venue | {{ parent() }}{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block body %}
+    <section class="l-section l-sponsors">
+        <div class="container">
+            <div class="grid">
+                <h2 class="h-section">Venue</h2>
+                <div class="grid__item one-half">
+                    <img src="/images/addison-conference-center.jpg" alt="Addison Conference Center">
+                </div><!--
+
+             --><div class="grid__item one-half">
+                    <p>This year the Lone Star PHP Conference is being held at the Addison Conference Center in Addison, TX from April 25th &amp; 26th. Conveniently located near the Dallas North Tollway, the Centre includes the state of the art Addison Theatre Centre, the award-winning Addison Conference Centre and historic Stone Cottage.</p>
+
+                    <p>For more information on the Addison Conference Center and surrounding area, <a href="http://www.addisontx.gov/departments/conf_theatre/" target="_blank" rel="external">go to their site</a>.</p>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="grid__item one-half palm-one-whole">
+                    <h3>From DFW Airport</h3>
+                    <ol>
+                        <li>Take 121 North out of the airport.</li>
+                        <li>Head east on 635 for about 14 miles.</li>
+                        <li>Take exit 22c onto Dallas North Tollway heading north.</li>
+                        <li>Exit Belt Line Rd/Arapaho Rd.</li>
+                        <li>Turn left on Arapaho. Then turn right on Quorum Dr.</li>
+                        <li>Follow the circle and make a left onto Addison Circle.</li>
+                    </ol>
+                </div><!--
+
+             --><div class="grid__item one-half palm-one-whole">
+                    <h3>From Love Field Airport</h3>
+                    <ol>
+                        <li>Turn left out of the airport, heading east on Mockingbird Ln.</li>
+                        <li>Merge onto North Dallas Tollway heading north for 10 miles.</li>
+                        <li>Exit Belt Line Rd/Arapaho Rd.</li>
+                        <li>Turn left on Arapaho. Then turn right on Quorum Dr.</li>
+                        <li>Follow the circle and make a left onto Addison Circle.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="l-map" id="map"></div>
+    </section>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="/js/map.js"></script>
+{% endblock %}
