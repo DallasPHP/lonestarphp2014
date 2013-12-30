@@ -36,6 +36,11 @@ $app->register(new \Silex\Provider\TwigServiceProvider(), [
 //    ]
 ]);
 
+// Add current_page global
+$app->before(function(Symfony\Component\HttpFoundation\Request $req) use ($app) {
+    $app['twig']->addGlobal('current_page', $req->get("_route"));
+});
+
 //$app['twig'] = $app->share($app->extend('twig', function($twig, $app){
 //    /** @var $twig Twig_Environment */
 //    $twig->addExtension(new App\Twig\Extension\Foo());
