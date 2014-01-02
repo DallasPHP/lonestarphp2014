@@ -1,5 +1,5 @@
 <?php
-define('CACHE_PATH', dirname(__DIR__) . '/tmp/cache');
+define('CACHE_PATH', dirname(__DIR__) . '/cache');
 
 date_default_timezone_set('America/Chicago');
 
