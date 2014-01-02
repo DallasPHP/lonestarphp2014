@@ -14,7 +14,7 @@ function initialize() {
         overviewMapControl: false,
         disableDoubleClickZoom: false,
         scrollwheel: false,
-        draggable: true
+        draggable: false
     };
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     function addHotelMarker(title, latLng, url, map) {
