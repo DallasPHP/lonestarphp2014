@@ -7,4 +7,4 @@ web1:
   shared_writeable_dirs: [tmp/cache]
   after_build:
     - "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php; fi; php composer.phar install --no-dev"
-    - "rm -rf tmp/*"
+    - "rm -rf tmp/cache/*"
