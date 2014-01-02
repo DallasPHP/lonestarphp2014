@@ -1,6 +1,5 @@
 <?php
 define('CACHE_PATH', dirname(__DIR__) . '/tmp/cache');
-
 date_default_timezone_set('America/Chicago');
 
 //Setup App/DI Container
