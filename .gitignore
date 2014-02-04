@@ -1,5 +1,7 @@
 .DS_Store
 public/css/.sass-cache/*
+.sass-cache/
+node_modules/
 bin/
 vendor/
 cache/
