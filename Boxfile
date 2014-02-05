@@ -12,3 +12,6 @@ web1:
   after_build:
     - "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php; fi; php composer.phar install --no-dev"
     - "rm -rf tmp/cache/*"
+db1:
+  name: 2014_lonestarphp
+  type: mysql
