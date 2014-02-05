@@ -5,6 +5,8 @@ web1:
   php_extensions:
     - intl
     - zip
+    - mysql
+    - pdo_mysql
   shared_writable_dirs:
    - tmp/cache
   after_build:
