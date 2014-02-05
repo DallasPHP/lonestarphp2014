@@ -9,3 +9,11 @@ a {
 a:hover {
     color: lighten($baseColor, 10%);
 }
+
+.grid--narrow{
+    margin-left:-4px;
+
+    > .grid__item{
+        padding-left:4px;
+    }
+}

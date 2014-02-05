@@ -24,8 +24,8 @@
         </div>
         <ul class="nav nav--block collapse" id="primary-navigation">
             <li><a href="/">Home</a></li>
-            <li><a href="#">Speakers</a></li>
-            <li><a href="#">Schedule</a></li>
+            <li><a href="/speakers">Speakers</a></li>
+            <li><a href="/schedule">Schedule</a></li>
             <li><a href="/sponsors">Sponsors</a></li>
             <li><a href="/venue">Venue</a></li>
             <li><a href="mailto:info@lonestarphp.com">Contact</a></li>
@@ -79,6 +79,18 @@
     {% endblock %}
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        // Offset anchors due to fixed header
+        $(document).ready(function() {
+            $(window).ready(function() {
+                var hash = location.hash.replace('#','');
+
+                if (hash) {
+                    $('html, body').scrollTop($('#' + hash).offset().top - 65);
+                }
+            })
+        });
+    </script>
     <script type="text/javascript" src="/js/vendor/bootstrap.min.js"></script>
     {% block javascript %}{% endblock %}
     <script type="text/javascript">

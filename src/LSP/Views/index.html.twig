@@ -3,7 +3,7 @@
 {% block body %}
     <section class="l-cta l-section">
         <div class="container">
-            <p>Early Bird Tickets are available until February 4th! Grab a ticket while they're still available<br><a href="https://lonestarphp.ticketbud.com/lone-star-php-2014" target="_blank" rel="external" class="btn btn-primary btn--medium btn--dark"><i class="fa fa-ticket"></i> Get Early Bird Ticket</a></p>
+            <p>Early Bird Tickets are available until February 18th! Grab a ticket while they're still available<br><a href="https://lonestarphp.ticketbud.com/lone-star-php-2014" target="_blank" rel="external" class="btn btn-primary btn--medium btn--dark"><i class="fa fa-ticket"></i> Get Early Bird Ticket</a></p>
         </div>
     </section>
     <section class="l-description l-section">
@@ -14,7 +14,23 @@
     <section class="l-section">
         <div class="container">
             <h2 class="h-section">Speakers</h2>
-            <p>The Call For Pappers is currently closed and speakers will be notified and schedule announced shortly, so check back in soon! In the mean time, purchase an <a href="https://lonestarphp.ticketbud.com/lone-star-php-2014" target="_blank" rel="external">Early Bird Ticket</a> before they run out!</p>
+            <div class="grid">
+                {% for speaker in speakers %}
+                    {%- if not loop.first -%}-->{%- endif -%}<div class="speaker-info grid__item one-quarter">
+                        <h4><a href="/speakers#{{ speaker.first_name|replace({"'": '', " ": '-'})|lower }}-{{ speaker.last_name|replace({"'": '', " ": '-'})|lower }}"><figure class="speaker-photo">
+                            <img src="
+                            {% if speaker.photo_path %}
+                                http://cfp.lonestarphp.com/uploads/{{ speaker.photo_path }}
+                            {% else %}
+                                /images/missing-photo.png
+                            {% endif %}
+                            " alt="{{ speaker.first_name }} {{ speaker.last_name }}">
+                        </figure>
+                        {{ speaker.first_name }} {{ speaker.last_name }}</a></h4>
+                    </div>{%- if not loop.last -%}<!--{%- endif -%}
+                {% endfor %}
+            </div>
+            <p><a href="/speakers" target="_blank" rel="external" class="btn btn-primary btn-medium"><i class="fa fa-user"></i> View All Speakers</a></p>
         </div>
     </section>
     <section class="l-map" id="map"></section>

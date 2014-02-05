@@ -23,10 +23,10 @@ class IndexController {
      * @Route("/",methods={"GET"},name="index")
      */
     public function indexAction() {
-        // $form = $this->createBuilder(new Form\LoginForm())->getForm();
+        $speakerRepo = $this->get('repository.manager')->factory('Speaker');
 
         return $this->render("index.html.twig", [
-            // 'form' => $form->createView(),
+            'speakers' => $speakerRepo->fetchRandom()
         ]);
     }
 
@@ -35,6 +35,33 @@ class IndexController {
      */
     public function codeOfConduct() {
         return $this->render("coc.html.twig", []);
+    }
+
+    /**
+     * @Route("/speakers",methods={"GET"},name="speakers")
+     */
+    public function speakersAction() {
+        $speakerRepo = $this->get('repository.manager')->factory('Speaker');
+
+        return $this->render("speakers.html.twig", ['speakers' => $speakerRepo->fetchAllSelected()]);
+    }
+
+    /**
+     * @Route("/talks",methods={"GET"},name="talk")
+     */
+    public function talksAction()
+    {
+        $talkRepo = $this->get('repository.manager')->factory('Talk');
+
+        return $this->render("talks.html.twig", ['talks' => $talkRepo->fetchAllSelected()]);
+    }
+
+    /**
+     * @Route("/schedule",methods={"GET"},name="schedule")
+     */
+    public function scheduleAction()
+    {
+        return $this->render("schedule.html.twig", []);
     }
 
     /**

@@ -1,0 +1,47 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Speakers | {{ parent() }}{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block body %}
+    <section class="l-section l-sponsors">
+        <div class="container">
+            <h2 class="h-section">Speakers</h2>
+            <div class="grid">
+                {% for speaker in speakers %}
+                        <div class="speaker" id="{{ speaker.first_name|replace({"'": '', " ": '-'})|lower }}-{{ speaker.last_name|replace({"'": '', " ": '-'})|lower }}">
+                            <div class="speaker-info grid__item one-quarter">
+                                <figure class="speaker-photo">
+                                    <img src="
+                                    {% if speaker.photo_path %}
+                                        http://cfp.lonestarphp.com/uploads/{{ speaker.photo_path }}
+                                    {% else %}
+                                        /images/missing-photo.png
+                                    {% endif %}
+                                    " alt="{{ speaker.first_name }} {{ speaker.last_name }}">
+                                </figure>
+                                <h4>{{ speaker.first_name }} {{ speaker.last_name }}</h4>
+                            </div><!--
+
+                         --><div class="speaker-bio grid__item two-quarters">
+                                {{ speaker.bio|striptags('<a>')|raw }}
+                            </div><!--
+
+                         --><div class="speaker-talks grid__item one-quarter">
+                                <h6 class="h-category">Talks</h6>
+                                <ul>
+                                    {% for talk in speaker.talks.get(speaker) %}
+                                        <li><a href="/talks#talk-{{ talk.id }}">{{ talk.title }}</a></li>
+                                    {% endfor %}
+                                    {% if speaker.talks.get(speaker)|length == 0 %}
+                                            <li><a href="#">PHP Foundations</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

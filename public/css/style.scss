@@ -24,6 +24,8 @@
 @import "layout";
 @import "buttons";
 @import "modules/sponsor";
+@import "modules/speaker";
+@import "modules/schedule";
 
 .h-header {
     color: #fff;
@@ -40,6 +42,13 @@
     font-family: $fontHeadlineFamily;
     font-weight: 300;
     text-align: center;
+    text-transform: uppercase;
+}
+.h-category {
+    padding: 0.5rem;
+    color: #fff;
+    background: #333;
+    font-weight: 600;
     text-transform: uppercase;
 }
 .h-footer {

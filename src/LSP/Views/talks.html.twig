@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Talks | {{ parent() }}{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block body %}
+    <section class="l-section l-sponsors">
+        <div class="container">
+            <h2 class="h-section">Talks</h2>
+            <div class="grid">
+                {% for talk in talks %}
+                        <div class="speaker">
+                            <div class="speaker-info grid__item one-quarter">
+                                <figure class="speaker-photo">
+                                    <img src="
+                                    {% if talk.photo_path %}
+                                        http://cfp.lonestarphp.com/uploads/{{ talk.photo_path }}
+                                    {% else %}
+                                        /images/missing-photo.png
+                                    {% endif %}
+                                    " alt="{{ talk.first_name }} {{ talk.last_name }}">
+                                </figure>
+                                <h4><a href="/speakers#{{ talk.first_name|replace({"'": '', " ": '-'})|lower }}-{{ talk.last_name|replace({"'": '', " ": '-'})|lower }}">{{ talk.first_name }} {{ talk.last_name }}</a></h4>
+                            </div><!--
+
+                         --><div class="grid__item three-quarters" id="talk-{{ talk.id }}">
+                                <h3>{{ talk.title }}</h3>
+                                {{ talk.description }}
+                            </div>
+                        </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
