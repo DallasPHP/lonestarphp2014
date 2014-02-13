@@ -1,4 +1,4 @@
-$photoRadius: 8rem;
+$photoRadius: 10rem;
 
 .speaker {
   border-top: 1px solid #ccc;
@@ -13,6 +13,7 @@ $photoRadius: 8rem;
 .speaker-info { text-align: center; }
 .speaker-info a { text-decoration: none; }
 .speaker-photo {
+  display: inline-block;
   background: transparent url('/images/bg-speaker.png') repeat;
   padding: 1.5rem;
   border: 1px #ccc dashed;
