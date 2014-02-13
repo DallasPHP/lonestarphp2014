@@ -17,4 +17,4 @@ cd ./public
 
 # Check for pagoda gem
 type pagoda >/dev/null 2>&1 || echo "Please install the 'pagoda' gem, it is required for DB tunnel";
-ENVIRONMENT=dev DB1_HOST=127.0.0.1 DB1_NAME=2014_cfp_lonestarphp DB1_USER=sherlyn DB1_PASS=D7zOLoJH DB1_PORT=3306 php -S localhost:4000
+ENVIRONMENT=dev DB1_HOST=127.0.0.1 DB1_NAME=2014_lonestarphp DB1_USER=dixie DB1_PASS=le2XkMi3 DB1_PORT=3306 php -S localhost:4000
