@@ -11,6 +11,7 @@ web1:
    - tmp/cache
   after_build:
     - "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php; fi; php composer.phar install --no-dev"
+  after_deploy:
     - "rm -rf tmp/cache/*"
 db1:
   name: 2014_lonestarphp
