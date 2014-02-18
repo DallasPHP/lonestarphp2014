@@ -25,7 +25,7 @@
                             </div><!--
 
                          --><div class="speaker-bio grid__item two-quarters">
-                                {{ speaker.bio|raw|striptags('<a><p>') }}
+                                {{ speaker.bio|striptags('<a><p>')|raw }}
                             </div><!--
 
                          --><div class="speaker-talks grid__item one-quarter">
