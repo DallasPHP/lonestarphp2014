@@ -3,6 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <meta property="og:image" content="http://lonestarphp.com/images/lonestarphp-logo.png"/>
+    <meta property="og:title" content="{% block fbtitle %}{{ block('title') }}{% endblock %}"/>
+    <meta property="og:description" content="{% block fbdesc %}The Lone Star PHP Conference brings together the best PHP speakers and topics to the DFW metroplex for an amazing, two-day event(April 25-26, 2014). Tickets on sale now and going fast!{% endblock %}"/>
+    <meta property="og:site_name" content="Lone Star PHP Conference"/>
 
     <title>{% block title %}Lone Star PHP Conference | April 25th - 26th, 2014 | Dallas, Texas{% endblock %}</title>
 
@@ -34,7 +38,7 @@
     </nav>
     <header class="l-header{% if current_page == "index" %} l-header--large{% endif %}">
         <div class="container">
-            <img src="images/lonestarphp-logo.png">
+            <img src="/images/lonestarphp-logo.png">
             {% block header %}
                 <h1 class="h-header">Join us <span class="h-header-highlight">April 25th - 26th, 2014</span> for this two day event and hear the best speakers the <span class="h-header-highlight">PHP Community</span> has to offer.</h1>
                 <a href="https://lonestarphp.ticketbud.com/lone-star-php-2014" class="btn btn-primary btn-large"><i class="fa fa-ticket"></i> Register Now</a>
