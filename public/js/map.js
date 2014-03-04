@@ -40,6 +40,11 @@ function initialize() {
         animation: google.maps.Animation.DROP
     });
 
+    // Add Click Event for location
+    google.maps.event.addListener(eventMarker, 'click', function() {
+        window.location = 'http://www.addisontx.gov/Departments/conf_theatre/News___Articles/Addison_Conference_Centre.asp';
+    });
+
     // Add Hotels
     addHotelMarker(
         "Hyatt House",
