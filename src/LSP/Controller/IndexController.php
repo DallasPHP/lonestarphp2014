@@ -26,7 +26,7 @@ class IndexController {
         $speakerRepo = $this->get('repository.manager')->factory('Speaker');
 
         return $this->render("index.html.twig", [
-            'speakers' => [] // $speakerRepo->fetchRandom()
+            'speakers' => $speakerRepo->fetchRandom()
         ]);
     }
 
