@@ -26,7 +26,7 @@ class IndexController {
         $speakerRepo = $this->get('repository.manager')->factory('Speaker');
 
         return $this->render("index.html.twig", [
-            'speakers' => $speakerRepo->fetchRandom()
+            'speakers' => [] // $speakerRepo->fetchRandom()
         ]);
     }
 
@@ -55,6 +55,15 @@ class IndexController {
 
         return $this->render("talks.html.twig", ['talks' => $talkRepo->fetchAllSelected()]);
     }
+
+    /**
+     * @Route("/foundations",methods={"GET"},name="foundation")
+     */
+    public function foundationAction()
+    {
+        return $this->render("foundation.html.twig", []);
+    }
+
 
     /**
      * @Route("/schedule",methods={"GET"},name="schedule")
