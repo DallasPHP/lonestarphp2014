@@ -26,7 +26,7 @@
 
                          --><div class="grid__item three-quarters" id="talk-{{ talk.id }}">
                                 <h3>{{ talk.title }}</h3>
-                                {{ talk.description }}
+                                {{ talk.description|striptags('<a><p>')|raw }}
                             </div>
                         </div>
                 {% endfor %}
