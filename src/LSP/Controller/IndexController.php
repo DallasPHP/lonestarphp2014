@@ -64,6 +64,13 @@ class IndexController {
         return $this->render("foundation.html.twig", []);
     }
 
+    /**
+     * @Route("/scholarship",methods={"GET"},name="scholarship")
+     */
+    public function scholarshipAction()
+    {
+        return $this->render("scholarship.html.twig", []);
+    }
 
     /**
      * @Route("/schedule",methods={"GET"},name="schedule")

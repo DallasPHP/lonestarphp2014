@@ -1,0 +1,60 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Scholarship | {{ parent() }}{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block body %}
+    <section class="l-section">
+        <div class="container">
+            <h2 class="h-section">Lone Star PHP 2014 Scholarship</h2>
+            
+            <p>
+                The PHP community over the past 4 years have turned Lone Star PHP into one of the most successful community run conferences, 
+                and we want to give back! This year, Lone Star PHP is offering 2 scholarships to developers to attend our conference and 
+                connect with their peers and mentors. While this scholarship specifically encourages students, women, minorities, and other 
+                under-represented groups to apply applications are open to anyone.
+            </p>
+
+            <p>
+                Scholarship recipients will be partnered with a guide (whom we will affectionately refer to as sherpas). These guides will 
+                be experienced developers who have attended several conferences and will act as ambassadors and mentors to the scholars, 
+                helping them meet their peers, connect with our speakers, hone their craft, and make lifelong friends in the community.
+            </p>
+            
+            <h3>Scholarship Benefits</h3>
+            
+            <ul>
+                <li>Full access to the conference, including the <a href="{{ path("foundation") }}">Foundations Track</a>.</li>
+                <li>2 nights hotel stay.</li>
+                <li>Pairing with an experienced Developer Sherpa</li>
+                <li><em>The vetting organization that chooses you may wish to provide additional benefits and assistance, however
+                    this is up to the individual organization that selects your application</em></li>
+            </ul>
+                
+            
+            <h3>Application Process</h3>
+            
+            <p>
+                All interested candidates will be asked to fill out an application here. Lone Star PHP is offering 2 scholarship, each 
+                scholarship will be given to an organization in the PHP community to judge and vet candidates: 
+                <a href="http://phpwomen.org/" target="_blank">PHPWomen</a> and <a href="http://nomadphp.com/">NomadPHP</a>.
+            </p>
+            
+            <p>
+                The application deadline will be <strong>March 17th, 2014 at 11:59pm CST</strong>. Applications will be reviewed on a rolling basis so please, 
+                don’t hesitate to apply early!
+            </p>
+            
+            <p>
+                Please ensure the email you use to submit an application with is checked often. You will have a limited amount of time (48 hours) 
+                to accept an offered scholarship until it is revoked and given to the next in line.
+            </p>
+            
+
+            <p style="text-align: center">
+                <a href="https://docs.google.com/forms/d/16a3Z1FOmOeiyfF84LZNqvYJl7UhPPyrf0RcnIQU8O88/viewform" class="btn btn-primary btn-large"><i class="fa fa-pencil-square-o"></i> Apply Now</a>
+            </p>
+        </div>
+    </section>
+{% endblock %}
