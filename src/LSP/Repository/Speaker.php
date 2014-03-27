@@ -17,7 +17,7 @@ class Speaker {
             'SELECT u.id, u.first_name, u.last_name, u.company, u.twitter, s.bio, s.photo_path FROM talks t ' .
             'LEFT JOIN speakers s ON s.user_id=t.user_id ' .
             'LEFT JOIN users u ON u.id=t.user_id ' .
-            'WHERE t.selected=1 OR u.id IN(237,41,341)' .
+            'WHERE t.selected=1 OR u.id IN(237,41,341,73)' .
             'GROUP BY u.id ' .
             'ORDER BY u.first_name ASC'
         );
@@ -44,7 +44,7 @@ class Speaker {
             'SELECT u.id, u.first_name, u.last_name, s.photo_path FROM talks t ' .
             'LEFT JOIN speakers s ON s.user_id=t.user_id ' .
             'LEFT JOIN users u ON u.id=t.user_id ' .
-            'WHERE t.selected=1 OR u.id IN(237,41,341)' .
+            'WHERE t.selected=1 OR u.id IN(237,41,341,73)' .
             'GROUP BY u.id ' .
             'ORDER BY RAND()' .
             'LIMIT ' . $limit
