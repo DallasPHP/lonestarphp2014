@@ -86,15 +86,33 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
-        // Offset anchors due to fixed header
-        $(document).ready(function() {
-            $(window).ready(function() {
-                var hash = location.hash.replace('#','');
+        /**
+         * Offset anchors due to fixed header
+         * @param  {Event} e Event object
+         * @return {void}
+         */
+        function scrollAdjust(e) {
+            var anchorPosition;
+            var hash = location.hash.replace('#','');
 
-                if (hash) {
-                    $('html, body').scrollTop($('#' + hash).offset().top - 65);
-                }
-            })
+            // Click Event
+            if (e) {
+                e.preventDefault();
+                hash = $(this).attr('href').replace('#', '');
+            }
+
+            if (hash) {
+                anchorPosition = $('#' + hash).offset().top - 65;
+                $('html, body').scrollTop(anchorPosition);
+            }
+        }
+
+        $('a[href^="#"]').on('click', scrollAdjust);
+
+        // Offset anchors onload
+        $(window).on('load', function() {
+            $('html, body').scrollTop(0);
+            setTimeout(scrollAdjust, 1);
         });
     </script>
     <script type="text/javascript" src="/js/vendor/bootstrap.min.js"></script>
