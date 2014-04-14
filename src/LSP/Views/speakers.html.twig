@@ -11,7 +11,7 @@
             <div class="grid">
                 {% for speaker in speakers %}
                         <div class="speaker" id="{{ speaker.first_name|replace({"'": '', " ": '-'})|lower }}-{{ speaker.last_name|replace({"'": '', " ": '-'})|lower }}">
-                            <div class="speaker-info grid__item one-quarter">
+                            <div class="speaker-info grid__item one-quarter palm-one-whole">
                                 <figure class="speaker-photo">
                                     <img src="
                                     {% if speaker.photo_path %}
@@ -24,11 +24,11 @@
                                 <h4>{{ speaker.first_name }} {{ speaker.last_name }}</h4>
                             </div><!--
 
-                         --><div class="speaker-bio grid__item two-quarters">
+                         --><div class="speaker-bio grid__item two-quarters palm-one-whole">
                                 {{ speaker.bio|striptags('<a><p>')|raw }}
                             </div><!--
 
-                         --><div class="speaker-talks grid__item one-quarter">
+                         --><div class="speaker-talks grid__item one-quarter palm-one-whole">
                                 <h6 class="h-category">Talks</h6>
                                 <ul>
                                     {% for talk in speaker.talks.get(speaker) %}

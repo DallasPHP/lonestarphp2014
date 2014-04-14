@@ -11,7 +11,7 @@
             <div class="grid">
                 {% for talk in talks %}
                         <div class="speaker">
-                            <div class="speaker-info grid__item one-quarter">
+                            <div class="speaker-info grid__item one-quarter palm-one-whole">
                                 <figure class="speaker-photo">
                                     <img src="
                                     {% if talk.photo_path %}
@@ -24,7 +24,7 @@
                                 <h4><a href="/speakers#{{ talk.first_name|replace({"'": '', " ": '-'})|lower }}-{{ talk.last_name|replace({"'": '', " ": '-'})|lower }}">{{ talk.first_name }} {{ talk.last_name }}</a></h4>
                             </div><!--
 
-                         --><div class="grid__item three-quarters" id="talk-{{ talk.id }}">
+                         --><div class="grid__item three-quarters palm-one-whole" id="talk-{{ talk.id }}">
                                 <h3>{{ talk.title }}</h3>
                                 {{ talk.description|striptags('<a><p>')|raw }}
                             </div>
